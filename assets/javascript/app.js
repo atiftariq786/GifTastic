@@ -29,7 +29,33 @@ $(document).ready(function () {
 
       var animalsImage = $('<img>');
               
-      animalsImage.attr("src", apiResponse[i].images.downsized_medium.url);
+      animalsImage.attr("src", apiResponse[i].images.downsized_still.url);
+
+      animalsImage.attr("data-still", apiResponse[i].images.downsized_still.url);
+
+      animalsImage.attr("data-animate", apiResponse[i].images.downsized_medium.url);
+
+      animalsImage.attr("data-state", "still");
+
+      animalsImage.on("click",function() {
+
+        var state = $(this).attr("data-state");
+
+        if (state === "still") {
+
+          $(this).attr("src", $(this).attr("data-animate"));
+  
+          $(this).attr("data-state", "animate");
+  
+        } else {
+  
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+
+
+      });
+
 
       animalsImage.attr("width", "250px");
       animalsImage.attr("height", "200px");
@@ -38,6 +64,12 @@ $(document).ready(function () {
 
       gifDiv.prepend(animalsImage);
       gifDiv.prepend(p);
+
+      //-------GIFs Pausing------
+
+    //var data[""0""].images.downsized_still.url
+
+    //data[""0""].images.downsized_small.mp4
 
 
       
@@ -144,6 +176,10 @@ $(document).ready(function () {
     console.log(animals); 
 
     
+
+    
+
+
 
 })
 
