@@ -8,26 +8,56 @@
 
 <style>
   body{
-    background: grey;
+    background:rgb(20, 20, 20);
+    color:grey;
+    margin: 2% 2% 2% 4%;
   }
   #gifs-display{
 
-    width: 260;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
   }
 
   .allResize{
-    width:260;
+    width:317px;
   }
 
   .resize{
     height: 35px;
-    width: 60px;
+    margin-right: 0.5%; 
+    background: grey;
   }
-  
+  #buttons-display{
+    margin-top: 20px;
+  }
+  #userInput{
+    margin-top: 10px;
+    background: black;
+    color: white;
+    padding: 5px;
+  }
+  form{
+    margin-top: 20px;
+  }
+  h1{
+    text-align: center;
+    size: 30px;
+    color: #afb1b3;
+  }
+  #userSubmit{
+    height: 28px;
+    width: 65px;
+    
+
+  }
 </style>
 </head>
 
 <body>
+
+  <h1>GifTastic</h1>
 <!-------------form data--------------->
   <form>
     <label for="gif-search">Add an animal</label><br>

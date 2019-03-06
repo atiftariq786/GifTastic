@@ -10,23 +10,23 @@ $(document).ready(function () {
 
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animals + "&api_key=a5W87BWFnrdUxgTG8eWjb7rLW8i67AJE&limit=10";
 
-  
-  $.ajax({
+    $.ajax({
       url: queryURL,
       method: "GET"
   }).then(function (response) {
        
       console.log(response);
 
-
-
       var apiResponse = response.data;
 
-    //------------Operation---------------------------
+//------------------------Operation-----------------------------------------------------
+      $("#gifs-display").empty();
+
       for(var i = 0; i< apiResponse.length;i++){
       
       var gifDiv = $('<div class="allResize">');
-
+      
+      //-------GIFs Pausing and Generate through ApiReponse------
       var animalsImage = $('<img>');
               
       animalsImage.attr("src", apiResponse[i].images.downsized_still.url);
@@ -56,27 +56,16 @@ $(document).ready(function () {
 
       });
 
-
-      animalsImage.attr("width", "250px");
+      animalsImage.attr("width", "270px");
       animalsImage.attr("height", "200px");
 
       var p = $('<p class="allResize">').text("Rating: " + apiResponse[i].rating);
 
       gifDiv.prepend(animalsImage);
       gifDiv.prepend(p);
-
-      //-------GIFs Pausing------
-
-    //var data[""0""].images.downsized_still.url
-
-    //data[""0""].images.downsized_small.mp4
-
-
-      
+     
 
       $("#gifs-display").prepend(gifDiv);
-
-
 
       
       }
@@ -84,16 +73,12 @@ $(document).ready(function () {
   });
 
 }
-
- //------------ Button section--------------------
+//-------------- Button section---------------------------------------------------
 
  var buttonsArray=["Cat", "Rat", "Rabbit","Horse","Camel","Frog","Dog"];
 
   arrayOperation();
-  
  
-  //$(".allResize").width(260);
-
  function arrayOperation (){
     for (var i = 0; i < buttonsArray.length;i++){
 
@@ -110,11 +95,8 @@ $(document).ready(function () {
 
     }
  }
- //-------Add Button On Click -----------------  
-
+    //-------Add Button On Click -------  
     
-
-
     $("#userSubmit").on("click", function(event) {
 
       event.preventDefault();
@@ -140,8 +122,6 @@ $(document).ready(function () {
       
       })
       
-        
-
 
         newButton1.addClass("resize");
   
@@ -150,19 +130,10 @@ $(document).ready(function () {
         newButton1.text(animalAdd);
   
         $("#buttons-display").append(newButton1); 
-        
-        
 
-      }   
-      
-           
-      
-      
+      }      
       
     });
-
-    
-
 //-------Button On Click operation----------------- 
 
 
@@ -175,14 +146,8 @@ $(document).ready(function () {
     
     console.log(animals); 
 
-    
-
-    
-
-
 
 })
-
 
   
 }) 
