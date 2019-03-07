@@ -1,14 +1,10 @@
 
 $(document).ready(function () {
     
+//-----------AJAX CAll and API Response---------------------------------------------------
+  function ajaxQuery(animals){
 
- 
-
- function ajaxQuery(animals){
-
- 
-
-  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animals + "&api_key=a5W87BWFnrdUxgTG8eWjb7rLW8i67AJE&limit=10";
+   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animals + "&api_key=a5W87BWFnrdUxgTG8eWjb7rLW8i67AJE&limit=10";
 
     $.ajax({
       url: queryURL,
@@ -19,7 +15,7 @@ $(document).ready(function () {
 
       var apiResponse = response.data;
 
-//------------------------Operation-----------------------------------------------------
+//-------------------Operation---------------------------------------------------------
       $("#gifs-display").empty();
 
       for(var i = 0; i< apiResponse.length;i++){
@@ -95,7 +91,7 @@ $(document).ready(function () {
 
     }
  }
-    //-------Add Button On Click -------  
+    //-------Add Button On Submit Click -------  
     
     $("#userSubmit").on("click", function(event) {
 
@@ -134,7 +130,7 @@ $(document).ready(function () {
       }      
       
     });
-//-------Button On Click operation----------------- 
+    //-------Button On Click operation------------ 
 
 
   $("button").on("click", function () {
