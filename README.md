@@ -14,10 +14,13 @@
 
 ## GifTastic Image View
 
+*   Initial buttons (Desktop view)
 ![alt text](https://github.com/atiftariq786/GifTastic/blob/master/assets/images/Giftastic-1.jpg?raw=true "GifTastic-1 ")
 
+*   Tiger new button added(Desktop view)
 ![alt text](https://github.com/atiftariq786/GifTastic/blob/master/assets/images/Giftastic-2.jpg?raw=true "GifTastic-2")
 
+*   Lion new button added (mobile responsive view)
 ![alt text](https://github.com/atiftariq786/GifTastic/blob/master/assets/images/Giftastic-3_Responsive.jpg?raw=true "GifTastic-3 Responsive")
 
 ## Giftastic Descriptions
